@@ -18,7 +18,6 @@ import {
     makeStyles,
     MenuItem,
     Select,
-    Theme,
     Typography
 } from '@material-ui/core';
 import RoomIcon from '@material-ui/icons/Room';
@@ -34,7 +33,7 @@ import { makeCarIcon, makeMarkerIcon, Map } from '../util/map';
 import { RouteExistsError } from '../errors/route-exists.error';
 import { NavBar } from './NavBar';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
     createStyles({
         root: {
             width: "100%",
@@ -100,7 +99,7 @@ export const Mapping = () => {
 
         setFinishedRoutes((prevState) => [...prevState, route]);
 
-    }, [enqueueSnackbar, routes, routeIdSelected]);
+    }, [enqueueSnackbar, routes]);
 
     useEffect(() => {
 
